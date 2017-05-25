@@ -26,7 +26,7 @@ import rx.functions.Action1;
 public class NetFragment extends RxFragment {
 
     @Bind(R.id.tv_result)
-    TextView tv_reuslt;
+    TextView tv_result;
 
     private TestProtocol mTestProtocol;
 
@@ -52,12 +52,12 @@ public class NetFragment extends RxFragment {
                 .subscribe(new Action1<String>() {          //  (4)
                     @Override
                     public void call(String data) {         //  (5)
-                        tv_reuslt.setText("Get Result:\r\n" + data);
+                        tv_result.setText("Get Result:\r\n" + data);
                     }
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) { //  (6)
-                        tv_reuslt.setText("Get Error:\r\n" + throwable.getMessage());
+                        tv_result.setText("Get Error:\r\n" + throwable.getMessage());
                     }
                 });
 
@@ -74,12 +74,12 @@ public class NetFragment extends RxFragment {
                 .subscribe(new Action1<String>() {
                     @Override
                     public void call(String s) {
-                        tv_reuslt.setText("Post Result:\r\n" + s);
+                        tv_result.setText("Post Result:\r\n" + s);
                     }
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        tv_reuslt.setText("Post Error:\r\n" + throwable.getMessage());
+                        tv_result.setText("Post Error:\r\n" + throwable.getMessage());
                     }
                 });
     }
@@ -94,12 +94,12 @@ public class NetFragment extends RxFragment {
                 .subscribe(new Action1<String>() {
                     @Override
                     public void call(String data) {
-                        tv_reuslt.setText("Put Result:\r\n" + data);
+                        tv_result.setText("Put Result:\r\n" + data);
                     }
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        tv_reuslt.setText("Put Error:\r\n" + throwable.getMessage());
+                        tv_result.setText("Put Error:\r\n" + throwable.getMessage());
                     }
                 });
     }
@@ -112,12 +112,12 @@ public class NetFragment extends RxFragment {
                 .subscribe(new Action1<String>() {
                     @Override
                     public void call(String data) {
-                        tv_reuslt.setText("Delete Result:\r\n" + data);
+                        tv_result.setText("Delete Result:\r\n" + data);
                     }
                 }, new Action1<Throwable>() {
                     @Override
                     public void call(Throwable throwable) {
-                        tv_reuslt.setText("Delete Error:\r\n" + throwable.getMessage());
+                        tv_result.setText("Delete Error:\r\n" + throwable.getMessage());
                     }
                 });
     }
